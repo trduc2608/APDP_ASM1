@@ -15,10 +15,16 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
     <PackageReference Include="NUnit.Analyzers" Version="3.6.1" />
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Selenium.Support" Version="4.18.1" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.18.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ASM1_1ST_APDP_DucTM_BH01243\ASM1_1ST_APDP_DucTM_BH01243.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="drivers\" />
   </ItemGroup>
 
 </Project>
