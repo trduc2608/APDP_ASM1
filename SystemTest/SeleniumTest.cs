@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using System.Collections.ObjectModel;
 
 namespace SIMS.Tests
 {
@@ -13,11 +14,33 @@ namespace SIMS.Tests
         public void SetUp()
         {
             // Initialize the Chrome Driver
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             driver.Manage().Window.Maximize();
             // Navigate to the SIMS login page
-            driver.Navigate().GoToUrl("https://sims.fpl.com");
+            driver.Navigate().GoToUrl("https://fap.fpi.edu.vn");
         }
+
+        [Test]
+
+        public void verifyLogo()
+
+        {
+            Assert.IsTrue(driver.FindElement(By.Id("LogoBTEC")).Displayed);
+
+        }
+
+        [Test]
+
+        public void verifyMenuItemcount()
+
+        {
+
+            ReadOnlyCollection<IWebElement> menuItem = driver.FindElements(By.XPath("//ul[contains(@class,'horizontal-list product-menu')]/li"));
+
+            Assert.AreEqual(menuItem.Count, 4);
+
+        }
+
 
         [Test]
         public void AddNewStudent()
